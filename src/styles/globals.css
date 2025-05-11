@@ -1,2 +1,98 @@
 @import "tailwindcss";
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
+.logoBg {
+  background-image: url("../../public/assets/logo.svg");
+  color: #c8a7a7;
+}
+.H-fromHestia::before {
+  content: "H";
+  color: var(--color-Chart-Primary);
+  font-weight: bold;
+  font-size: 1.5em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.bgFooter{
+ background-image: url(../../public/assets/footerbgLight.svg);
+}
+
+
+@theme {
+  /* Light mode - Base colors */
+  --color-main: #7a2c20;       /* Deep brick red (primary brand color) */
+  --color-Secondary: #9c4132;  /* Adjusted for better contrast */
+  --color-headerBg: #e8d5d2;   /* Lighter parchment tone */
+  --color-Background: #fff9f8; /* Warmer off-white */
+  --color-Text: #3a1a15;       /* Darker text for readability */
+
+  /* Aside elements */
+  --color-Aside: #f5e8e5;      /* Warmer light tone */
+  --color-Aside-Border: #c87d6d; /* Softer border color */
+
+  /* Chart colors */
+  --color-Chart-Primary: #7a2c20;
+  --color-Chart-Secondary: #9c4132;
+  --color-Chart-Accent1: #d9735d;
+  --color-Chart-Accent2: #5e2018;
+  --color-Chart-Accent3: #a34739; /* More consistent with main palette */
+  --color-Chart-Background: #fff9f8;
+
+  /* UI Feedback colors */
+  --color-Success: #6b8c42;    /* Earthy green */
+  --color-Warning: #d98c4b;    /* Warm orange */
+  --color-Danger: #c23d30;     /* Vibrant alert red */
+  --color-Info: #5a7d9c;       /* Cool blue for info */
+  --color-Disabled: #e0d0cd;   /* Soft neutral */
+
+  /* Form elements */
+  --color-Input-Background: #ffffff;
+  --color-Input-Border: #d3b8b3;
+  --color-Input-Focus: #7a2c20;
+  --breakpoint-xs:520px
+}
+
+/* Dark Mode Theme */
+[data-theme="dark"] {
+  .bgFooter{
+ background-image: url(../../public/assets/footerbgDark.svg);
+}
+  /* Base colors */
+  --color-main: #c2695c;       /* Warmer primary */
+  --color-Secondary: #d9887b;  /* Better contrast */
+  --color-headerBg: #2a0e08;   /* Darker header */
+  --color-Background: #1a0c09; /* Richer dark base */
+  --color-Text: #f0e0dd;       /* Softer light text */
+
+  /* Aside elements */
+  --color-Aside: #2c1612;      /* Darker than before */
+  --color-Aside-Border: #8c4a3f;
+
+  /* Chart colors */
+  --color-Chart-Primary: #c2695c;
+  --color-Chart-Secondary: #d9887b;
+  --color-Chart-Accent1: #e89d8d;
+  --color-Chart-Accent2: #8c3d32;
+  --color-Chart-Accent3: #d46a5b;
+  --color-Chart-Background: #231510;
+
+  /* UI Feedback colors */
+  --color-Success: #7fa356;    /* Brighter success */
+  --color-Warning: #e3a568;
+  --color-Danger: #e04b3b;     /* More vibrant */
+  --color-Info: #6b95bb;
+  --color-Disabled: #3d2a26;
+
+  /* Form elements */
+  --color-Input-Background: #2a1511;
+  --color-Input-Border: #5a2d26;
+  --color-Input-Focus: #c2695c;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
