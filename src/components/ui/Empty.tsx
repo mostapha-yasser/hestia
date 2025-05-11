@@ -27,6 +27,7 @@ function Empty() {
 
       <div className="lg:w-1/2 mt-12 absolute lg:static z-10">
         <Image
+        priority
           width={400}
           height={400}
           src={EmptyLogo}

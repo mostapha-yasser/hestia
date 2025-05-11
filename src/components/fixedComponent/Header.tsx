@@ -15,6 +15,7 @@ function Header() {
       border-b-2 border-main shadow-sm shadow-main">
       <Link href={"/"}>
         <Image
+        priority
           src={logo}
           alt="hestia logo"
           className="mr-4  w-20  h-20 pt-1 scale-165"

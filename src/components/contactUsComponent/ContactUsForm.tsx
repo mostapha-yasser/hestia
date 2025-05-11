@@ -69,7 +69,6 @@ export default function ContactUsForm() {
         });
         setErrors(fieldErrors);
       } else {
-        // Handle other errors (like EmailJS errors)
         toast.error('Failed to send message. Please try again.');
         console.error('Form submission error:', error);
       }

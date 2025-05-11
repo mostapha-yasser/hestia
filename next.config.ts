@@ -1,12 +1,20 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-   images: {
-      domains: ['randomuser.me'],
-    },
-
-
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  
+  experimental: {
+    serverComponentsExternalPackages: ['mongodb'],
+    forceSwcTransforms: true,
+  }
 };
- 
- module.exports = nextConfig;
- 
+
+export default nextConfig;

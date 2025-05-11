@@ -34,7 +34,7 @@ export default function CandleCard({ candleData }: { candleData: Product }) {
   return (
     <div className="card relative">
       <div className="image z-50">
-        <Image src={jar} alt="candle image " width={300} height={300} />
+        <Image src={jar} alt="candle image " priority width={300} height={300} />
       </div>
       <p
         className="absolute z-1 top-2  rotate-45 

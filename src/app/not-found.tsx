@@ -30,6 +30,7 @@ const NotFound=()=> {
           <div className="relative hidden lg:block">
             <div className="absolute inset-0 bg-main rounded-full filter blur-3xl opacity-30 animate-pulse"></div>
             <Image
+            priority
             width={400}
             height={400}
               src={balloon}

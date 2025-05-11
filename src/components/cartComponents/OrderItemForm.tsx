@@ -5,7 +5,6 @@ import useGetOneProduct from "@/Hooks/useGetOneProduct";
 import { OrderItem } from "@/types/order";
 
 function OrderItemForm({ orderItemBeforeEdit }: { orderItemBeforeEdit: OrderItem }) {
-    console.log(orderItemBeforeEdit)
     const { data } = useGetOneProduct(orderItemBeforeEdit._id);
     const { editItem } = useOrderContext();
     const {

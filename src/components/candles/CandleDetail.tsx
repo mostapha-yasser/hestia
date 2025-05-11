@@ -51,6 +51,7 @@ export default function CandleDetail({ candleId }: { candleId: string }) {
          border-Aside-Border rounded-2xl"
       >
         <Image
+        priority
           src={mold}
           alt={""}
           width={400}

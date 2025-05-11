@@ -25,6 +25,7 @@ export default function HeroSection() {
         className="relative hidden md:flex  w-3/6  h-full"
       >
         <Image
+        priority
           src={logo}
           alt=""
           className=" w-2/3 scale-y-150 scale-x-200  hidden lg:block"

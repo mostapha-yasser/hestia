@@ -29,7 +29,6 @@ export default function UserProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     
     const logged_in = Cookies.get("logged_in");
-    console.log("Session from cookie:", logged_in);
     
     setIsLogin(logged_in=="true"?true:false)
     

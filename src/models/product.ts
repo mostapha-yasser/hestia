@@ -3,13 +3,6 @@ import { Product, ProductDB } from "../types/product";
 import { connectToDatabase } from "@/lib/mongodb";
 
 export class ProductModel {
-
-  async initIndexes() {
-    await this.collection.createIndex({
-      name: "text",
-      description: "text",
-    });
-  }
   private collection: Collection<ProductDB>;
   private static instance: ProductModel;
 
@@ -21,10 +14,18 @@ export class ProductModel {
     if (!ProductModel.instance) {
       const { db } = await connectToDatabase("main");
       ProductModel.instance = new ProductModel(db);
+      await ProductModel.instance.initIndexes();
     }
     return ProductModel.instance;
   }
- 
+
+  async initIndexes() {
+    await this.collection.createIndex({
+      name: "text",
+      description: "text",
+    });
+  }
+  
   async findAll(): Promise<Product[]> {
     const products = await this.collection.find().toArray();
     return products.map(this.toResponse);
@@ -35,25 +36,18 @@ export class ProductModel {
     filter: Filter<ProductDB> = {}
   ): Promise<Product[]> {
     let searchFilter: Filter<ProductDB> = {};
-    if (query && query.trim() !== "" && Object.keys(filter).length > 0) {
-      searchFilter.$and = [
-        {
-          $or: [
-            { name: { $regex: query, $options: "i" } },
-          ],
-        },
-        filter,
+    
+    if (query?.trim()) {
+      searchFilter.$or = [
+        { name: { $regex: query, $options: "i" } },
+        { description: { $regex: query, $options: "i" } }
       ];
-    } else if (query && query.trim() !== "") {
-      searchFilter = {
-        $or: [
-          { name: { $regex: query, $options: "i" } },
-        ],
-      };
-    } else if (Object.keys(filter).length > 0) {
-      searchFilter = filter;
-    } else {
-      return await this.findAll();
+    }
+    
+    if (Object.keys(filter).length > 0) {
+      searchFilter = query?.trim() 
+        ? { $and: [searchFilter, filter] } 
+        : filter;
     }
 
     const products = await this.collection.find(searchFilter).toArray();
@@ -62,14 +56,18 @@ export class ProductModel {
 
   async findById(id: string): Promise<Product | null> {
     try {
-      const product = await this.collection.findOne({ _id: new ObjectId(id) });
+      if (!ObjectId.isValid(id)) return null;
+      
+      const product = await this.collection.findOne({ 
+        _id: new ObjectId(id) 
+      });
       return product ? this.toResponse(product) : null;
-    } catch {
+    } catch (error) {
+      console.error("Error finding product by ID:", error);
       return null;
     }
   }
 
-  
   private toResponse(dbProduct: WithId<ProductDB>): Product {
     return {
       _id: dbProduct._id.toString(),

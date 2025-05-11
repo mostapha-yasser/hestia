@@ -43,7 +43,7 @@ function About() {
         </div>
         <Image
         className="hidden lg:block"
-          priority={false}
+          priority
           src={theme === "dark" ? aboutUsLogoDark : aboutUsLogoLight}
           alt={"aboutUs Logo Light"}
         />
