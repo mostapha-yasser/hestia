@@ -27,9 +27,10 @@ function LoginForm() {
   return (
     <form
       action={loginAction}
-      className="w-full md:w-3/5 lg:w-2/5 px-10 py-3 space-y-6 text-Text   shadow-m shadow-main border-3 rounded-2xl border-main "
+      className="w-full md:w-3/5 lg:w-2/5 px-10 py-3 space-y-6 text-Text
+         shadow-m shadow-main border-3 rounded-sm border-main "
     >
-      <p className="text-center text-3xl sm:text-5xl  font-bold ">
+      <p className="text-center text-2xl sm:text-3xl xl:text-4xl md:tracking-wider font-bold">
         welcome back
       </p>
 
@@ -44,7 +45,7 @@ function LoginForm() {
           placeholder="Enter your email"
           autoComplete="email"
           aria-describedby="email-error"
-          className={` w-full px-6 py-3 mt-2 rounded-xl border border-Input-Border bg-Input-Background placeholder:text-center`}
+          className={` w-full px-6 py-3 mt-2 rounded-xs border border-Input-Border bg-Input-Background placeholder:text-center`}
         />
 
         <p className="text-center min-h-6 text-red-500 ">
@@ -63,7 +64,7 @@ function LoginForm() {
           placeholder="Enter your password"
           autoComplete="current-password"
           aria-describedby="password-error"
-          className={` w-full px-6 py-3 mt-2 rounded-xl border border-Input-Border bg-Input-Background placeholder:text-center`}
+          className={` w-full px-6 py-3 mt-2 rounded-xs border border-Input-Border bg-Input-Background placeholder:text-center`}
         />
 
         <p className="text-center min-h-6 text-red-500">

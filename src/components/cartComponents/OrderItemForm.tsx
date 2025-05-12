@@ -44,7 +44,7 @@ function OrderItemForm({ orderItemBeforeEdit }: { orderItemBeforeEdit: OrderItem
           cursor-pointer
           "
         >
-          {data?.prices.map((sizeObj) => (
+{Array.isArray(data?.prices) && data.prices.map((sizeObj) => (
             <label
               key={sizeObj.size}
               className={` w-1/3 p-1  lg:p-2

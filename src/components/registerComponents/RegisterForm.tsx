@@ -26,9 +26,9 @@ function RegisterForm() {
     <form
       action={registerAction}
       className="w-full  lg:w-7/12 px-10 sm:py-2 sm:space-y-0.5 text-Text
-         shadow-m shadow-main border-3 rounded-2xl border-main "
+         shadow-m shadow-main border-3 rounded-sm border-main "
     >
-      <p className="text-center text-3xl sm:text-3xl  font-bold my-3 ">
+      <p className="text-center text-2xl sm:text-3xl xl:text-4xl md:tracking-wider font-bold mb-4">
         Join Us
       </p>
       <div className="flex items-center justify-center sm:justify-between flex-col sm:flex-row">
@@ -44,8 +44,9 @@ function RegisterForm() {
             autoComplete="full Name"
             aria-describedby="fullName-error"
             className={` w-full px-6 sm:py-2 sm:mt-1 
-              rounded-xl border border-Input-Border
-              text-sm py-1 sm:text-base bg-Input-Background placeholder:text-center`}
+              rounded-xs border border-Input-Border
+              text-sm py-1 sm:text-base
+               bg-Input-Background placeholder:text-center`}
           />
 
           <p className="text-center min-h-4 text-red-500  text-xs">
@@ -64,7 +65,7 @@ function RegisterForm() {
             autoComplete="email"
             aria-describedby="email-error"
             className={` w-full px-6 sm:py-2 sm:mt-1 
-              rounded-xl border border-Input-Border
+              rounded-xs border border-Input-Border
               text-sm py-1 sm:text-base bg-Input-Background placeholder:text-center`}
           />
 
@@ -86,7 +87,7 @@ function RegisterForm() {
             placeholder="Enter your Whats App"
             autoComplete="Whats App"
             aria-describedby="whatsApp-error"
-            className={` font-mono w-full sm:px-6 sm:py-2 sm:mt-1  text-sm sm:text-base  rounded-xl border border-Input-Border bg-Input-Background placeholder:text-center placeholder:font-sans `}
+            className={` font-mono w-full sm:px-6 sm:py-2 sm:mt-1  text-sm sm:text-base  rounded-xs border border-Input-Border bg-Input-Background placeholder:text-center placeholder:font-sans `}
           />
 
           <p className="text-center min-h-4 text-red-500  text-xs">
@@ -104,7 +105,7 @@ function RegisterForm() {
             placeholder="Enter your phone"
             autoComplete="phone"
             aria-describedby="phone-error"
-            className={` font-mono w-full sm:px-6 sm:py-2 sm:mt-1 text-sm sm:text-base rounded-xl border border-Input-Border bg-Input-Background placeholder:text-center placeholder:font-sans`}
+            className={` font-mono w-full sm:px-6 sm:py-2 sm:mt-1 text-sm sm:text-base rounded-xs border border-Input-Border bg-Input-Background placeholder:text-center placeholder:font-sans`}
           />
 
           <p className="text-center min-h-4 text-red-500  text-xs">
@@ -126,7 +127,7 @@ function RegisterForm() {
             autoComplete="governorate"
             aria-describedby="governorate-error"
             className={` w-full px-6 sm:py-2 sm:mt-1 
-              rounded-xl border border-Input-Border
+              rounded-xs border border-Input-Border
               text-sm py-1 sm:text-base bg-Input-Background placeholder:text-center`}
           />
 
@@ -146,7 +147,7 @@ function RegisterForm() {
             autoComplete="city"
             aria-describedby="city-error"
             className={` w-full px-6 sm:py-2 sm:mt-1 
-              rounded-xl border border-Input-Border
+              rounded-xs border border-Input-Border
               text-sm py-1 sm:text-base bg-Input-Background placeholder:text-center`}
           />
 
@@ -166,7 +167,7 @@ function RegisterForm() {
             autoComplete="address"
             aria-describedby="address-error"
             className={` w-full px-6 sm:py-2 sm:mt-1 
-              rounded-xl border border-Input-Border
+              rounded-xs border border-Input-Border
               text-sm py-1 sm:text-base bg-Input-Background placeholder:text-center`}
           />
 
@@ -189,7 +190,7 @@ function RegisterForm() {
             autoComplete="current-password"
             aria-describedby="password-error"
             className={` w-full px-6 sm:py-2 sm:mt-1 
-              rounded-xl border border-Input-Border
+              rounded-xs border border-Input-Border
               text-sm py-1 sm:text-base bg-Input-Background placeholder:text-center`}
           />
 
@@ -209,7 +210,7 @@ function RegisterForm() {
             autoComplete="current-password"
             aria-describedby="password-error"
             className={` w-full px-6 sm:py-2 sm:mt-1 
-              rounded-xl border border-Input-Border
+              rounded-xs border border-Input-Border
               text-sm py-1 sm:text-base bg-Input-Background placeholder:text-center`}
           />
 

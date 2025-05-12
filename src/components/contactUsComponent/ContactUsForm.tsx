@@ -1,18 +1,19 @@
-"use client"
-import { useRef, useState } from 'react';
-import { z } from 'zod';
-import { toast } from 'react-toastify';
-import emailjs from '@emailjs/browser';
+"use client";
+import { useRef, useState } from "react";
+import { z } from "zod";
+import { toast } from "react-toastify";
+import emailjs from "@emailjs/browser";
 
 const contactFormSchema = z.object({
-  email: z.string()
+  email: z
+    .string()
     .min(1, { message: "Email is required" })
     .email({ message: "Invalid email address" }),
-  message: z.string()
+  message: z
+    .string()
     .min(10, { message: "Message must be at least 10 characters" })
-    .max(500, { message: "Message cannot exceed 500 characters" })
+    .max(500, { message: "Message cannot exceed 500 characters" }),
 });
-
 
 interface FormErrors {
   email?: string;
@@ -33,8 +34,8 @@ export default function ContactUsForm() {
 
     const formData = new FormData(formRef.current);
     const formValues = {
-      email: formData.get('email') as string,
-      message: formData.get('message') as string
+      email: formData.get("email") as string,
+      message: formData.get("message") as string,
     };
 
     try {
@@ -42,9 +43,11 @@ export default function ContactUsForm() {
       contactFormSchema.parse(formValues);
 
       // Proceed with EmailJS submission if validation passes
-      if (!process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 
-          !process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 
-          !process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) {
+      if (
+        !process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ||
+        !process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ||
+        !process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      ) {
         throw new Error("EmailJS configuration missing");
       }
 
@@ -55,22 +58,21 @@ export default function ContactUsForm() {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       );
 
-      toast.success('Message sent successfully!');
+      toast.success("Message sent successfully!");
       formRef.current.reset();
     } catch (error) {
       if (error instanceof z.ZodError) {
-        // Handle Zod validation errors
         const fieldErrors: FormErrors = {};
         error.errors.forEach((err) => {
           const path = err.path[0];
-          if (path === 'email' || path === 'message') {
+          if (path === "email" || path === "message") {
             fieldErrors[path] = err.message;
           }
         });
         setErrors(fieldErrors);
       } else {
-        toast.error('Failed to send message. Please try again.');
-        console.error('Form submission error:', error);
+        toast.error("Failed to send message. Please try again.");
+        console.error("Form submission error:", error);
       }
     } finally {
       setIsSubmitting(false);
@@ -81,10 +83,10 @@ export default function ContactUsForm() {
     <form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="w-full md:w-3/5 lg:w-2/5 px-6 py-5 space-y-5 text-Text
-         shadow-md border rounded-2xl border-main"
+      className="w-full md:w-4/5 lg:w-3/6 px-6 py-4 space-y-4 text-Text
+         shadow-md border-3 rounded-sm border-main "
     >
-      <p className="text-center text-3xl sm:text-5xl font-bold">
+      <p className="text-center text-2xl sm:text-3xl xl:text-4xl md:tracking-wider font-bold">
         Contact With Us
       </p>
 
@@ -99,7 +101,7 @@ export default function ContactUsForm() {
           placeholder="Enter your email"
           autoComplete="email"
           aria-describedby="email-error"
-          className="w-full px-6 py-3 mt-2 rounded-xl border border-Input-Border bg-Input-Background placeholder:text-center"
+          className="w-full px-6 py-3 mt-2 rounded-sm border-2 border-Input-Border bg-Input-Background placeholder:text-center"
         />
 
         <p className="text-center min-h-6 text-red-500">
@@ -116,7 +118,7 @@ export default function ContactUsForm() {
           name="message"
           placeholder="Enter your message to Hestia"
           aria-describedby="message-error"
-          className="w-full px-6 py-2 mt-2 min-h-44 max-h-44 rounded-xl border 
+          className="w-full px-6 py-2 mt-2 min-h-44 max-h-44 rounded-sm border-2
              border-Input-Border bg-Input-Background placeholder:pt-16 placeholder:text-center"
         />
 
@@ -124,20 +126,21 @@ export default function ContactUsForm() {
           {errors.message && errors.message}
         </p>
       </div>
-
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className={` py-4  bg-main text-white
-        font-medium w-3/5  hover:shadow-2xl
-           rounded-2xl mx-auto
-           cursor-pointer
-           transition-colors ${
-          isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
-        }`}
-      >
-        {isSubmitting ? 'Sending...' : 'Send Message'}
-      </button>
+      <div className="flex justify-center">
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className={` py-4  bg-main text-white
+                  font-medium w-2/5   hover:shadow-2xl
+                  rounded-sm                  text-xl
+                  cursor-pointer
+                  transition-colors ${
+                    isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+                  }`}
+        >
+          {isSubmitting ? "Sending..." : "Send Message"}
+        </button>
+      </div>
     </form>
   );
 }
