@@ -56,7 +56,6 @@ export class ProductModel {
 
   async findById(id: string): Promise<Product | null> {
     try {
-      if (!ObjectId.isValid(id)) return null;
       
       const product = await this.collection.findOne({ 
         _id: new ObjectId(id) 

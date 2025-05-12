@@ -7,7 +7,7 @@ type staticImageData={
 export default function CategoryCard({catData}:{catData:{id:number,image:staticImageData,title:string,description:string}}) {
  const {image,title,description}=catData
     return (
-    <div className="w-4/5 lg:w-2/5  pb-5  m-5  bg-Aside">
+    <div className="w-full sm:w-4/5 md:w-3/7 lg:w-2/5  pb-5 m-5  bg-Aside">
 
         <Image width={360} height={250} src={image.scr} alt="" priority className="overflow-hidden w-full h-72 "/>
 

@@ -8,7 +8,7 @@ export async function GET(
   const { id } = await params;
   try {
     const productModel = await ProductModel.getInstance();
-    const product =  productModel.findById(id);
+    const product = await productModel.findById(id);
 
     if (!product) {
       return Response.json(

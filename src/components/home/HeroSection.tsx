@@ -16,7 +16,7 @@ export default function HeroSection() {
         </p>
         <Link
           href={"/candles"}
-          className=" bg-main text-white px-4 py-2 rounded-xl text-xl "
+          className=" bg-main text-white px-4 py-2 rounded-sm text-xl "
         >
           Discover our candles
         </Link>

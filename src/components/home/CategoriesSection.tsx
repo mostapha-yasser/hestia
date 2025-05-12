@@ -23,13 +23,12 @@ export default function CategoriesSection() {
       <h2 className="text-Text text-3xl font-bold text-center  mb-4">
          Our Categories</h2>
              <p className="text-lg text-Text/80 text-center  max-w-2xl mx-auto ">
-            Discover our carefully crafted candle collections, each designed to bring warmth and ambiance to your special moments.
+            Discover our carefully crafted candle collections, each designed to bring
+             warmth and ambiance to your special moments.
           </p>
-
-
   
-      <div className="w-4/5 mx-auto flex flex-col lg:flex-row
-       items-center justify-evenly   p-10 ">
+      <div className="w-5/6 mx-auto flex flex-col md:flex-row
+       items-center justify-evenly   py-10 px-5  ">
         {categories.map((category) => (
           <CategoryCard catData={category} key={category.id} />
         ))}
