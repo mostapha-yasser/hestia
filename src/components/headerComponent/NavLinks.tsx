@@ -21,9 +21,11 @@ export default function NavLinks() {
           </p>
         </ActiveLink>
       ) : (
-        <div className="">
+        <div
+          onClick={() => setIsAccountListOpen((prev) => !prev)}
+          className="cursor-pointer "
+        >
           <button
-            onClick={() => setIsAccountListOpen((prev) => !prev)}
             className="flex gap-2 
           items-center
           cursor-pointer
