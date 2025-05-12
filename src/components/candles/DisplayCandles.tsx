@@ -1,10 +1,8 @@
 "use client"
 import useProduct from "@/Hooks/useProduct";
 import CandleCard from "./CandleCard";
-// import { useState } from "react";
 import Loading from "../ui/Loading";
 export default function DisplayCandles() {
-  // const [uRLSearchParams, setURLSearchParams] = useState("");
   const { data, isPending, error, isError } = useProduct();
 
 

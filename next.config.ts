@@ -1,20 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  
-  experimental: {
-    serverComponentsExternalPackages: ['mongodb'],
-    forceSwcTransforms: true,
-  }
-};
+import type { NextConfig } from "next";
 
-export default nextConfig;
+const nextConfig: NextConfig = {
+  
+
+
+};
+ 
+ module.exports = nextConfig;
+ 
