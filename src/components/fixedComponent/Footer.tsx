@@ -63,7 +63,7 @@ function Footer() {
                <span className="truncate text-2xl"> Go Web |</span>
               </Link>
               <Link
-                href="https://wa.me/01080131563"
+                href="https://wa.me/201080131563"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 hover:text-main"
