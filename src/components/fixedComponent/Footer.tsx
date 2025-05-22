@@ -1,7 +1,7 @@
 "use client";
 
 import { media } from "@/consts/general";
-import { MessageCircle, MapPin, Mail, Phone } from "lucide-react";
+import { MessageCircle, MapPin, Mail, Phone, Facebook } from "lucide-react";
 import Link from "next/link";
 import { Gmail } from "../icons/Gmail";
 
@@ -60,16 +60,25 @@ function Footer() {
                 target="_blank"
                 href="https://mostapha-yasser.github.io/mostapha-Portfolio/"
               >
-                Mostapha Yasser | Portfolio
+               <span className="truncate text-2xl"> Go Web |</span>
               </Link>
               <Link
-                href="https://wa.me/01027035927"
+                href="https://wa.me/01080131563"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 hover:text-main"
               >
                 <MessageCircle className="w-5 h-5" />
                 <span className="truncate">WhatsApp</span>
+              </Link>
+                 <Link
+                href="mailto:mostaphyasser18@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 hover:text-main"
+              >
+                <Facebook className="w-5 h-5" />
+                <span className="truncate">Facebook</span>
               </Link>
               <Link
                 href="mailto:mostaphyasser18@gmail.com"

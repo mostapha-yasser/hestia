@@ -68,7 +68,8 @@ function CheckOutModel({
           </div>
         </article>
       ) : (
-        <article className="w-10/12 md:w-9/12 lg:w-5/12 p-6 md:p-10 flex flex-col gap-6 bg-white rounded-2xl shadow-xl transition-all">
+        <article className="w-11/12 md:w-9/12 lg:w-5/12 p-2 sm:p-6 md:p-10 flex flex-col
+         gap-6 bg-white rounded-2xl shadow-xl transition-all">
           <div className="flex flex-col items-center gap-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -91,10 +92,10 @@ function CheckOutModel({
             </p>
           </div>
 
-          <div className="flex justify-end gap-4 text-base sm:text-lg">
+          <div className="flex sm:justify-end sm:gap-4 text-xs  gap-1 sm:text-lg">
             <button
               onClick={closeCheckOutModel}
-              className="flex items-center gap-2 border-2 border-main text-main font-medium px-5 py-2 rounded-xl 
+              className="flex items-center gap-1 text-nowrap sm:gap-2 border-2 border-main text-main font-medium px-5 py-2 rounded-xl 
                  cursor-pointer hover:shadow-xs shadow-Aside-Border transition duration-300"
             >
               <svg
@@ -116,7 +117,7 @@ function CheckOutModel({
 
             <Link
               href="/login"
-              className="flex items-center gap-2 bg-main text-white font-medium px-5 py-2 rounded-xl 
+              className="flex items-center gap-1 text-nowrap sm:gap-2 bg-main text-white font-medium px-5 py-2 rounded-xl 
                  hover:bg-opacity-90 cursor-pointer transition duration-300 
                  hover:shadow-xs shadow-Aside-Border"
             >
@@ -139,7 +140,7 @@ function CheckOutModel({
 
             <Link
               href="/register"
-              className="flex items-center gap-2 bg-main text-white font-medium px-5 py-2 rounded-xl 
+              className="flex items-center gap-1 text-nowrap sm:gap-2 bg-main text-white font-medium px-5 py-2 rounded-xl 
                  hover:bg-opacity-90 cursor-pointer transition duration-300 
                  hover:shadow-xs shadow-Aside-Border"
             >

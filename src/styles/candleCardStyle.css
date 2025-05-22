@@ -18,6 +18,16 @@
   }
   
  }
+ @media  (max-width:500px) {
+  .card {
+    width: 290px;
+    height: 420px;
+
+
+    font-size: .8rem;
+  }
+  
+ }
 .card:hover {
   box-shadow:0px 0px 5px 1px var(--color-Text) ;
 }
