@@ -68,7 +68,7 @@ function CheckOutModel({
           </div>
         </article>
       ) : (
-        <article className="w-11/12 md:w-9/12 lg:w-5/12 p-2 sm:p-6 md:p-10 flex flex-col
+        <article className="w-11/12 md:w-9/12 lg:w-5/12 px-2 py-6  sm:p-6 md:p-10 flex flex-col
          gap-6 bg-white rounded-2xl shadow-xl transition-all">
           <div className="flex flex-col items-center gap-4">
             <svg
@@ -85,14 +85,14 @@ function CheckOutModel({
                 d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <p className="text-base sm:text-lg text-main px-5 leading-relaxed text-center">
+            <p className="text-base sm:text-lg text-main  my-5 leading-relaxed tracking-wide w-10/12 mx-auto text-justify">
               To continue with your candle purchase, we kindly ask you to sign
               in to your account. Don&apos;t have an account yet? You&apos;re welcome to
               register - it&apos;s quick and easy.
             </p>
           </div>
 
-          <div className="flex sm:justify-end sm:gap-4 text-xs  gap-1 sm:text-lg">
+          <div className="flex justify-center sm:justify-end sm:gap-4 text-xs  gap-1 sm:text-lg">
             <button
               onClick={closeCheckOutModel}
               className="flex items-center gap-1 text-nowrap sm:gap-2 border-2 border-main text-main font-medium px-5 py-2 rounded-xl 
