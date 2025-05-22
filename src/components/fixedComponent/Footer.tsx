@@ -72,7 +72,7 @@ function Footer() {
                 <span className="truncate">WhatsApp</span>
               </Link>
                  <Link
-                href="mailto:mostaphyasser18@gmail.com"
+                href="https://www.facebook.com/people/Go-Web/61574079332132/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 hover:text-main"
@@ -81,7 +81,7 @@ function Footer() {
                 <span className="truncate">Facebook</span>
               </Link>
               <Link
-                href="mailto:mostaphyasser18@gmail.com"
+                href="mailto:go.web.company99@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 hover:text-main"
